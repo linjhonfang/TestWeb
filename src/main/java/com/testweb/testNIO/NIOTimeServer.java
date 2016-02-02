@@ -20,7 +20,6 @@ public class NIOTimeServer {
 
 	public static void main(String args[]) throws IOException{
 		int port = 8080;
-		System.out.println("The tiem server is start in port : " + port);
 		MultiplexerTimeServer timeServer = new MultiplexerTimeServer(port);
 		new Thread(timeServer,"NIO-MultiplexerTimeServer").start();
 
@@ -37,7 +36,6 @@ class MultiplexerTimeServer implements Runnable{
 			servChannel.configureBlocking(false);
 			servChannel.socket().bind(new InetSocketAddress(port),1024);
 			servChannel.register(selector, SelectionKey.OP_ACCEPT);
-			
 			
 			System.out.println("The time server is start in port : "+ port);
 		}catch (IOException e){
