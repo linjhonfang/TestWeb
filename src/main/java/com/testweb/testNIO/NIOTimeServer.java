@@ -93,7 +93,10 @@ class MultiplexerTimeServer implements Runnable{
 					String currentTime = "QUERY TIME ORDER"
 							.equalsIgnoreCase(body) ? new Date(
 							System.currentTimeMillis()).toString() : "WRONG";
-					doWrite(sc,currentTime);
+					doWrite(sc, currentTime);
+				} else if(readBytes<0){
+					key.cancel();
+					sc.close();
 				}
 			}
 		}
@@ -105,6 +108,7 @@ class MultiplexerTimeServer implements Runnable{
 			writeBuffer.put(bytes);
 			writeBuffer.flip();
 			channel.write(writeBuffer);
+			System.out.println("doWrite "+response);
 		}
 	}
 }

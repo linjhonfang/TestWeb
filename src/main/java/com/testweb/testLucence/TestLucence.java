@@ -24,9 +24,9 @@ public class TestLucence {
 	
 	public static void main(String arg[]) throws IOException, ParseException{
 		//demo();
-		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_40);
+		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_4_0);
 		Directory directory = new RAMDirectory();
-		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_40,analyzer);
+		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_0,analyzer);
 		IndexWriter iWriter = new IndexWriter(directory, config);
 		Document doc = new Document();
 		doc.add(new StringField("id","1234",Field.Store.YES));
