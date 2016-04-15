@@ -1,16 +1,18 @@
 package com.testweb.testNetty;
 
 import org.apache.log4j.Logger;
+import org.jboss.netty.handler.codec.frame.LineBasedFrameDecoder;
+import org.jboss.netty.handler.codec.string.StringDecoder;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.util.internal.SystemPropertyUtil;
 
 public class DiscardServer {
 	private Logger logger = Logger.getLogger(DiscardServer.class);
@@ -30,6 +32,9 @@ public class DiscardServer {
 						@Override
 						public void initChannel(SocketChannel ch)
 								throws Exception {
+							logger.info("initChannel xxc");
+							ch.pipeline().addLast("decoder", (ChannelHandler) new LineBasedFrameDecoder(1024));
+							ch.pipeline().addLast((ChannelHandler)new StringDecoder());
 							ch.pipeline().addLast(new DiscardServerHandler());
 						}
 					})
@@ -55,7 +60,7 @@ public class DiscardServer {
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
-            port = 8080;
+            port = 21;
         }
         new DiscardServer(port).run();
     }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+	    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
+	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd" >
+	
+		<!-- 默认的注解映射的支持 -->     
+	<context:annotation-config /> 
+	<!-- 使用注释方式创建对象，需要声明此行 --> 
+	<context:component-scan base-package="com.testweb" />
+	<aop:aspectj-autoproxy proxy-target-class="true" />	
+	<!-- 提供方应用名称信息，这个相当于起一个名字，我们dubbo管理页面比较清晰是哪个应用暴露出来的 -->
+	<dubbo:application name="dubbo_provider_xxc"/>
+	<!-- 使用zookeeper注册中心暴露服务地址 -->
+	<dubbo:registry address="zookeeper://10.5.111.93:4180" check="false" subscribe="false"
+		register="">
+	
+	</dubbo:registry>        
+	<dubbo:protocol name="dubbo" server="netty" port="30001" serialization="hessian2"  />      
+	<!-- 要暴露的服务接口 -->
+	<dubbo:service interface="com.testweb.testDubbo.TestRegitstryService" ref="testRegistryService"/>
+	<bean id="testRegistryService" class="com.testweb.testDubbo.TestRegitstryServiceImpl"></bean>
+	
+</beans>        
