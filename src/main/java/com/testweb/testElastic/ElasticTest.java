@@ -17,7 +17,6 @@ import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.Nullable;
@@ -48,7 +47,7 @@ public class ElasticTest {
 		}
 	}
 	
-	public static void main(String[] args) throws IOException {
+	public static void main1(String[] args) throws IOException {
 
 		testIndex();
         
@@ -114,7 +113,7 @@ public class ElasticTest {
         bulkProcessor.add(indexRequest);
 	}
 	
-	public static void main1(String[] args) {
+	public static void main(String[] args) {
 		GetResponse response = get("wordwiki", "test", "1");
 		
 	}

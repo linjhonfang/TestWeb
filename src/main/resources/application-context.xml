@@ -23,7 +23,7 @@
 	</dubbo:registry>        
 	<dubbo:protocol name="dubbo" server="netty" port="30001" serialization="hessian2"  />      
 	<!-- 要暴露的服务接口 -->
-	<dubbo:service interface="com.testweb.testDubbo.TestRegitstryService" ref="testRegistryService"/>
-	<bean id="testRegistryService" class="com.testweb.testDubbo.TestRegitstryServiceImpl"></bean>
+	<dubbo:service interface="com.testweb.testDubbo.TestRegitstryService" ref="testRegitstryService"/>
+	<bean id="testRegitstryService" class="com.testweb.testDubbo.TestRegitstryServiceImpl"></bean>
 	
 </beans>        
