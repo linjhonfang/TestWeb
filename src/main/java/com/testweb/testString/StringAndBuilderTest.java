@@ -1,7 +1,5 @@
 package com.testweb.testString;
 
-import org.apache.commons.lang.StringUtils;
-
 import com.tudou.utils.json.JsonTool;
 
 public class StringAndBuilderTest {

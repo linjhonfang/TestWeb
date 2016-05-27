@@ -1,15 +1,12 @@
 package com.testweb.testHttp;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang.StringUtils;
-
-import com.tudou.utils.json.JsonTool;
 
 public class HttpTest {
 

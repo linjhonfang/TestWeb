@@ -27,7 +27,7 @@ public class StringCodingTest {
     
     public static void main(String args[]) throws Exception{
     	//String userId = decodeUserCode("UMTMyNjc0NDc4NA");
-    	System.out.println(encodeId("331686196"));
+    	System.out.println(encodeId("816762994"));
     	//System.out.println(userId);
     }
     
@@ -43,6 +43,10 @@ public class StringCodingTest {
     	return ucode;
     }
 
-   
+   public static void main3(String[] args) {
+	   Object o = null;
+	   String str = (String)o;
+	   System.out.println(str==null);
+   }
 }
 

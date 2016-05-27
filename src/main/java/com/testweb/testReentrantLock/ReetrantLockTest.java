@@ -35,9 +35,9 @@ public class ReetrantLockTest implements Runnable
         thread.start();
         Thread.sleep(2000);
          
-        //lock.lock();
+        lock.lock();
         condition.signal();
-        //lock.unlock();
+        lock.unlock();
     }
  
 }

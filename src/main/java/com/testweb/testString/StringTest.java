@@ -1,11 +1,11 @@
 package com.testweb.testString;
 
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
 
 
 public class StringTest {
@@ -43,7 +43,7 @@ public class StringTest {
     }
 	
 	
-    public static void main(String args[]) throws Exception{
+    public static void main111(String args[]) throws Exception{
 //    	var videoId = '126230065';
 //    	var videoId2= 'XNTA0OTIwMjYw';http://p4.music.126.net/NlFNJWDldoaCPIEvb5mhUQ==/1385384653520729.jpg
     	System.out.println(decodeVideoId("VODQ2OTI1NDA4"));
@@ -162,5 +162,13 @@ public class StringTest {
 //	public static void main(String args[]){
 //		
 //	}
+	
+	public static void main(String[] args) {
+		String s = ".152.47";
+		String[] sn = s.split("\\.");
+		if(sn[0].equals(""))System.out.println("xxc");
+//		Integer n = Integer.valueOf(sn[0]);
+//		System.out.println("sdf="+n+" boolean="+s.contains("."));
+	}
 }
 

@@ -1,6 +1,7 @@
 package com.testweb.testNIO;
 
 
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -12,8 +13,6 @@ import java.nio.channels.SocketChannel;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
-
-import org.apache.commons.lang3.StringUtils;
 
 
 public class NIOTimeServer {

@@ -1,11 +1,12 @@
 package com.testweb.testUrl;
 
+import com.tudou.utils.client.HTTPLongClient;
+import com.tudou.utils.json.JsonTool;
+
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import com.tudou.utils.client.HTTPLongClient;
-import com.tudou.utils.json.JsonTool;
 
 public class UrlTest {
 	public static void main(String[] args) {

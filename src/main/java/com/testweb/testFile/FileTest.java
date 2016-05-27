@@ -1,14 +1,13 @@
 package com.testweb.testFile;
 
+import com.tudou.utils.json.JsonTool;
+
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.tudou.utils.json.JsonTool;
 
 public class FileTest {
 	public static void main1(String[] args) {

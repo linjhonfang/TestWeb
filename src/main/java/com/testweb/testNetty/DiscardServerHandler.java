@@ -1,11 +1,10 @@
 package com.testweb.testNetty;
 
-import org.apache.log4j.Logger;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
+import org.apache.log4j.Logger;
 
 public class DiscardServerHandler extends ChannelInboundHandlerAdapter{
 	private Logger logger = Logger.getLogger(DiscardServerHandler.class);
