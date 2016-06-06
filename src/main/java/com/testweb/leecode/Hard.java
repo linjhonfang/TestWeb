@@ -8,7 +8,16 @@ public class Hard {
 
     }
 
-    public void change(char[][] board,int i,int j, char value){
+    public void change(int[][] board, int i, int j, char value) {
 
+        board[i][j] = value;
+        for(int n=0;n<board.length;n++){
+//            board[n][j] = ;
+
+        }
     }
+
+//    public
+
+
 }
