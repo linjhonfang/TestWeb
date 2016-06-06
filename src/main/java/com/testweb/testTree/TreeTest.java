@@ -50,18 +50,16 @@ class Node{
 	
 	
 	public static Node getTree(){
-		Node node000 = new Node(null,null,"");
-		Node node001 = new Node(null,null,"");
-		Node node00 = new Node(node000,node001,"");
-		Node node0 = new Node(node00,null,"");
+		Node node000 = new Node(null,null,"node000");
+		Node node001 = new Node(null,null,"node001");
+		Node node00 = new Node(node000,node001,"node00");
+		Node node0 = new Node(node00,null,"node0");
 		
-		Node node110 = new Node(null,null,"");
-		Node node111 = new Node(null,null,"");
-		Node node11 = new Node(node110,node111,"");
-		Node node1 = new Node(null,node11,"");
-		
+		Node node110 = new Node(null,null,"node110");
+		Node node111 = new Node(null,null,"node111");
+		Node node11 = new Node(node110,node111,"node11");
+		Node node1 = new Node(null,node11,"node1");
 		Node node = new Node(node0,node1,"node");
-		
 		return node;
 	}
 	
@@ -80,8 +78,7 @@ class Node{
 				childList.add(array[i].lNode);
 			}
 		}
-		System.out.println();
-		
-		print(childList.toArray(new Node[0]));
+
+		//print(childList.toArray(new Node[0]));
 	}
 }
