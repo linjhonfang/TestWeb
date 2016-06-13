@@ -20,24 +20,25 @@ public class TestThread {
 	public static Integer int_lock = 0;
 	public static void method() throws InterruptedException{
 		System.out.println("~~~~~~~"+Thread.currentThread().getId());
-		if(Thread.currentThread().getId()==12){
+		if(Thread.currentThread().getId()==10){
 		synchronized (int_lock) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~"+Thread.currentThread().getId());
 			Thread.sleep(2000);
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~"+Thread.currentThread().getId());
 		}
 		}
-		if(Thread.currentThread().getId()==13){
-//			synchronized (int_lock_1) {
-//				System.out.println("~~~~~~~~~~~~~~~~~~~~~~"+Thread.currentThread().getId());
-//				Thread.sleep(2000);
-//				System.out.println("~~~~~~~~~~~~~~~~~~~~~~"+Thread.currentThread().getId());
-//			}
+		if(Thread.currentThread().getId()==11){
+			synchronized (int_lock_1) {
+				System.out.println("~~~~~~~~~~~~~~~~~~~~~~"+Thread.currentThread().getId());
+				Thread.sleep(2000);
+				System.out.println("~~~~~~~~~~~~~~~~~~~~~~"+Thread.currentThread().getId());
+			}
 			if(int_lock==0){
 				int_lock=int_lock-1;
-				System.out.println("~~~~int_lock"+int_lock);
+				System.out.println("~~~~int_lock:"+int_lock);
 			}
 		}
+
 	}
 	public static Integer int_lock_1 = 0;
 	public static String lock1 = "lock";
