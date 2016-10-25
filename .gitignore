@@ -6,4 +6,5 @@ target
 work
 /bin
 .idea
+/.idea
 TestWeb.iml
