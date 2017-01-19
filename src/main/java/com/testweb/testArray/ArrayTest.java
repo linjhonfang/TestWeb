@@ -1,6 +1,6 @@
 package com.testweb.testArray;
 
-import com.tudou.utils.json.JsonTool;
+import com.alibaba.fastjson.JSON;
 
 public class ArrayTest {
 	public static void main1(String[] args) {
@@ -10,7 +10,7 @@ public class ArrayTest {
 
 	public static void arrayIn(String... str) {
 
-		System.out.println(JsonTool.writeValueAsString(str));
+		System.out.println(JSON.toJSONString(str));
 	}
 
 	public static void main(String args[]){

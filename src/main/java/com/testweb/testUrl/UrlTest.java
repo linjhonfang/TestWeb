@@ -1,7 +1,7 @@
 package com.testweb.testUrl;
 
-import com.tudou.utils.client.HTTPLongClient;
-import com.tudou.utils.json.JsonTool;
+
+import com.alibaba.fastjson.JSON;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -15,8 +15,8 @@ public class UrlTest {
 		Map<String,Object> parms = new LinkedHashMap<String,Object>();
 		List<String> itemIdList = new LinkedList<String>();
 		itemIdList.add("4814802526864358"+i);
-		parms.put("goods_id", JsonTool.writeValueAsString(itemIdList));
-		String result = HTTPLongClient.getUrlContent("http://10.103.88.77/interact/stats/by_goods_id?goods_id=", false, parms, "utf-8");
+		parms.put("goods_id", JSON.toJSON(itemIdList));
+		String result = null; //HTTPLongClient.getUrlContent("http://10.103.88.77/interact/stats/by_goods_id?goods_id=", false, parms, "utf-8");
 		if(result==null){
 			System.out.println("result is null");
 			

@@ -1,6 +1,6 @@
 package com.testweb.testFile;
 
-import com.tudou.utils.json.JsonTool;
+import com.alibaba.fastjson.JSON;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,7 +57,7 @@ public class FileTest {
         				map.put("baiduUrl", str[str.length-1]);
         				is++;
         		}
-        		System.out.println(JsonTool.writeValueAsString(map));
+        		System.out.println(JSON.toJSONString(map));
         		
         	}
         }

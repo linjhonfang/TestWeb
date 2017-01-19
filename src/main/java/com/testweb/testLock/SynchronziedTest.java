@@ -1,7 +1,5 @@
 package com.testweb.testLock;
 
-import org.omg.PortableServer.THREAD_POLICY_ID;
-
 /**
  * Created by xingxuechao on 2016/6/12.
  */

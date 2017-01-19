@@ -1,6 +1,7 @@
 package com.testweb.testString;
 
-import com.tudou.utils.json.JsonTool;
+
+import com.alibaba.fastjson.JSON;
 
 public class StringAndBuilderTest {
 
@@ -39,24 +40,24 @@ public class StringAndBuilderTest {
 	public static void main5(String[] args) {
 		Model_Str mo = new Model_Str();
 		mo.setStr("123123");
-		String json = JsonTool.writeValueAsString(mo);
-		Model_Long mo2 =JsonTool.readValue(json, Model_Long.class);
+		String json = JSON.toJSONString(mo);
+		Model_Long mo2 =JSON.parseObject(json, Model_Long.class);
 		System.out.println(mo2.getStr());
 	}
 	
 	public static void main6(String[] args) {
 		Model_Long mo = new Model_Long();
 		mo.setStr(new Long(23123123));
-		String json = JsonTool.writeValueAsString(mo);
-		Model_Str mo2 =JsonTool.readValue(json, Model_Str.class);
+		String json =  JSON.toJSONString(mo);
+		Model_Str mo2 =JSON.parseObject(json, Model_Str.class);
 		System.out.println(mo2.getStr());
 	}
 	
 	public static void main(String[] args) {
 		Model_Long mo = new Model_Long();
 		mo.setStr(new Long(23123123));
-		String json = JsonTool.writeValueAsString(mo);
-		Model_Integer mo2 =JsonTool.readValue(json, Model_Integer.class);
+		String json =  JSON.toJSONString(mo);
+		Model_Integer mo2 =JSON.parseObject(json, Model_Integer.class);
 		System.out.println(mo2.getStr());
 	}
 }
