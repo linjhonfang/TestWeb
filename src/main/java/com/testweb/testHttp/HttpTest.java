@@ -28,7 +28,7 @@ public class HttpTest {
         String location = conn.getHeaderField("Location");  
         System.out.println("String : "+ location);
 	}
-	
+
 	
 	public static void main(String args[]) throws IOException{
 		String url = "http://weibo.com/p/1005051811442322/follow?pids=Pl_Official_HisRelation__65&relate=fans&page=3&ajaxpagelet=1&ajaxpagelet_v6=1&__ref=/p/1005051811442322/follow&_t=FM_146044739218049";  
